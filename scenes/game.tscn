@@ -1,71 +1,43 @@
-[gd_scene load_steps=6 format=3 uid="uid://dolfmu0v25x6g"]
+[gd_scene format=3 uid="uid://c0d7pfmw3tvdt"]
 
-[ext_resource type="Texture2D" uid="uid://41skwedgam7k" path="res://resorces/backrounds/no-shadows-250x125_2.png" id="3_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://41skwedgam7k" path="res://resorces/backrounds/no-shadows-250x125_2.png" id="1_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://dvyl75ttvmg2t" path="res://resorces/backrounds/windowBackgroungBuildingsNightClose.png" id="2_iywne"]
+[ext_resource type="Texture2D" uid="uid://cyum1i8edte3r" path="res://resorces/backrounds/windowBackgroungBuildingsNightFar.png" id="3_p57ef"]
+[ext_resource type="PackedScene" uid="uid://mh6ihk61d2ke" path="res://scenes/player.tscn" id="4_u5sy4"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lnu2h"]
+[node name="game" type="Node2D" unique_id=65961930]
 
-[sub_resource type="Gradient" id="Gradient_uwrxv"]
+[node name="room" type="Node2D" parent="." unique_id=1292391985]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_iywne"]
-gradient = SubResource("Gradient_uwrxv")
+[node name="Sprite2D" type="Sprite2D" parent="room" unique_id=1142506803]
+texture = ExtResource("1_lbhrr")
+centered = false
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
-normal = Vector2(-0.00276242, -0.999996)
-distance = 462.868
+[node name="windowParalax" type="Parallax2D" parent="room" unique_id=282023571]
+z_index = -1
+scroll_scale = Vector2(1.2, 1.2)
+scroll_offset = Vector2(165, 60)
 
-[node name="game" type="Node2D"]
+[node name="near" type="Sprite2D" parent="room/windowParalax" unique_id=1551520551]
+position = Vector2(5, 1)
+scale = Vector2(0.29000002, 0.25)
+texture = ExtResource("2_iywne")
 
-[node name="backrounds" type="ParallaxBackground" parent="."]
+[node name="far" type="Sprite2D" parent="room/windowParalax" unique_id=1318207742]
+z_index = -18
+position = Vector2(5, 1)
+scale = Vector2(0.29000002, 0.25)
+texture = ExtResource("3_p57ef")
 
-[node name="room" type="ParallaxLayer" parent="backrounds"]
-light_mask = 3
+[node name="player" parent="." unique_id=1498803642 instance=ExtResource("4_u5sy4")]
+position = Vector2(84, 113)
+scale = Vector2(0.4, 0.4)
 
-[node name="Sprite2D" type="Sprite2D" parent="backrounds/room"]
-light_mask = 3
-position = Vector2(0, -63)
-texture = ExtResource("3_lnu2h")
-
-[node name="windowCloseBuildings" type="ParallaxLayer" parent="backrounds"]
-z_index = -5
-position = Vector2(478, -207)
-motion_scale = Vector2(0.2, 0.2)
-motion_offset = Vector2(200, 200)
-
-[node name="Sprite2D" type="Sprite2D" parent="backrounds/windowCloseBuildings"]
-position = Vector2(611, -550)
-scale = Vector2(1.16712, 1.16712)
-texture = SubResource("NoiseTexture2D_lnu2h")
-
-[node name="windowFarBuildings" type="ParallaxLayer" parent="backrounds"]
-z_index = -5
-position = Vector2(-86, -417)
-motion_scale = Vector2(0.1, 0.1)
-motion_offset = Vector2(300, 300)
-
-[node name="Sprite2D" type="Sprite2D" parent="backrounds/windowFarBuildings"]
-position = Vector2(358, -657)
-scale = Vector2(4.93882, 5.66146)
-texture = SubResource("GradientTexture2D_iywne")
-
-[node name="darkner(give your heart shaped object)" type="CanvasModulate" parent="backrounds"]
-position = Vector2(-996, -189)
-scale = Vector2(5.70312, 6.52344)
-color = Color(0.649893, 0.650042, 1, 1)
-
-[node name="roomSides" type="Node" parent="."]
-
-[node name="LeftRoomBoarder" type="StaticBody2D" parent="roomSides"]
-position = Vector2(-878, -15)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="roomSides/LeftRoomBoarder"]
-position = Vector2(-605, 4)
-rotation = 1.5708
-shape = SubResource("WorldBoundaryShape2D_yqjtg")
-
-[node name="RightRoomBoarder" type="StaticBody2D" parent="roomSides"]
-position = Vector2(580, 4)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="roomSides/RightRoomBoarder"]
-position = Vector2(576, -1)
-rotation = -1.5708
-shape = SubResource("WorldBoundaryShape2D_yqjtg")
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=2132124848]
+position = Vector2(-2.5, -72.5)
+scale = Vector2(2.4999998, 2.4999998)
+limit_left = 0
+limit_top = 0
+limit_right = 250
+limit_bottom = 125
+limit_smoothed = true

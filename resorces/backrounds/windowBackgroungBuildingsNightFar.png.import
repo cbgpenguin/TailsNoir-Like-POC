@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvh84m6c42ocd"
-path="res://.godot/imported/detective-walk-animation-place-holder.png-4b3cfa876d6e6a9bb0dddd6b42d3a37c.ctex"
+uid="uid://cyum1i8edte3r"
+path="res://.godot/imported/windowBackgroungBuildingsNightFar.png-31b26e74c7e3b631a5400d2184f8e91d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resorces/player/detective-walk-animation-place-holder.png"
-dest_files=["res://.godot/imported/detective-walk-animation-place-holder.png-4b3cfa876d6e6a9bb0dddd6b42d3a37c.ctex"]
+source_file="res://resorces/backrounds/windowBackgroungBuildingsNightFar.png"
+dest_files=["res://.godot/imported/windowBackgroungBuildingsNightFar.png-31b26e74c7e3b631a5400d2184f8e91d.ctex"]
 
 [params]
 
