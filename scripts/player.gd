@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 250.0 * 60 # Pixles/s
+const SPEED = 100.0 * 60 # Pixles/s
 @onready var animatedSprite2d: AnimatedSprite2D = $AnimatedSprite2D
 var colidedLastFrame = true
 

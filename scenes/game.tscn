@@ -13,20 +13,23 @@
 texture = ExtResource("1_lbhrr")
 centered = false
 
-[node name="windowParalax" type="Parallax2D" parent="room" unique_id=282023571]
+[node name="windowNear" type="Parallax2D" parent="room" unique_id=282023571]
 z_index = -1
 scroll_scale = Vector2(1.2, 1.2)
 scroll_offset = Vector2(165, 60)
 
-[node name="near" type="Sprite2D" parent="room/windowParalax" unique_id=1551520551]
-position = Vector2(5, 1)
-scale = Vector2(0.29000002, 0.25)
+[node name="near" type="Sprite2D" parent="room/windowNear" unique_id=1551520551]
+position = Vector2(-4, -2)
+scale = Vector2(0.2, 0.173)
 texture = ExtResource("2_iywne")
 
-[node name="far" type="Sprite2D" parent="room/windowParalax" unique_id=1318207742]
+[node name="windowFar" type="Parallax2D" parent="room" unique_id=795104635]
+scroll_scale = Vector2(1.15, 1.15)
+
+[node name="far" type="Sprite2D" parent="room/windowFar" unique_id=1318207742]
 z_index = -18
-position = Vector2(5, 1)
-scale = Vector2(0.29000002, 0.25)
+position = Vector2(164.99998, 57.999996)
+scale = Vector2(0.23000017, 0.173)
 texture = ExtResource("3_p57ef")
 
 [node name="player" parent="." unique_id=1498803642 instance=ExtResource("4_u5sy4")]
