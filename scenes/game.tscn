@@ -12,10 +12,11 @@ colors = PackedColorArray(1, 1, 1, 1, 0.383838, 0.383838, 0.383838, 1, 0, 0, 0, 
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_lnu2h"]
 gradient = SubResource("Gradient_yqjtg")
-width = 1280
-height = 1280
+width = 300
+height = 300
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+metadata/_snap_count = 20
 
 [sub_resource type="Animation" id="Animation_iywne"]
 length = 0.001
@@ -106,6 +107,9 @@ polygon = PackedVector2Array(203, -361, 413, -361, 413, -339, 203, -340)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lnu2h"]
 polygon = PackedVector2Array(207, -193, 411, -195, 412, -184, 204, -185)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
+normal = Vector2(-0.00276242, -0.999996)
+
 [node name="game" type="Node2D" unique_id=65961930]
 texture_filter = 1
 
@@ -131,19 +135,23 @@ texture = ExtResource("1_lbhrr")
 centered = false
 
 [node name="windowNear" type="Parallax2D" parent="room" unique_id=282023571]
+light_mask = 8
 z_index = -1
 scroll_scale = Vector2(1.2, 1.2)
 scroll_offset = Vector2(165, 60)
 
 [node name="near" type="Sprite2D" parent="room/windowNear" unique_id=1551520551]
+light_mask = 8
 position = Vector2(-4, -2)
 scale = Vector2(0.2, 0.173)
 texture = ExtResource("2_iywne")
 
 [node name="windowFar" type="Parallax2D" parent="room" unique_id=795104635]
+light_mask = 8
 scroll_scale = Vector2(1.15, 1.15)
 
 [node name="far" type="Sprite2D" parent="room/windowFar" unique_id=1318207742]
+light_mask = 8
 z_index = -18
 position = Vector2(164.99998, 57.999996)
 scale = Vector2(0.23000017, 0.173)
@@ -162,7 +170,6 @@ shadow_enabled = true
 shadow_filter = 1
 shadow_filter_smooth = 1.6
 texture = SubResource("GradientTexture2D_lnu2h")
-texture_scale = 0.08
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="lighting/hangingLight" unique_id=1659878507]
 libraries/ = SubResource("AnimationLibrary_p57ef")
@@ -185,7 +192,7 @@ position = Vector2(-0.5520401, 0.26869202)
 scale = Vector2(0.99999994, 1)
 occluder = SubResource("OccluderPolygon2D_lbhrr")
 
-[node name="hangingLight2" type="PointLight2D" parent="lighting" unique_id=1498243599]
+[node name="forPlayer?" type="PointLight2D" parent="lighting" unique_id=1498243599]
 top_level = true
 light_mask = 2
 position = Vector2(93.68798, 26.671654)
@@ -193,15 +200,14 @@ scale = Vector2(1.2462498, 1.2220151)
 color = Color(1, 1, 0.439216, 1)
 energy = 1.8
 range_layer_min = -512
-range_item_cull_mask = 2
-shadow_enabled = true
+range_item_cull_mask = 0
 shadow_filter = 1
 shadow_filter_smooth = 1.6
-shadow_item_cull_mask = 2
+shadow_item_cull_mask = 0
 texture = SubResource("GradientTexture2D_lnu2h")
 texture_scale = 0.08
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="lighting/hangingLight2" unique_id=276351844]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lighting/forPlayer?" unique_id=276351844]
 libraries/ = SubResource("AnimationLibrary_p57ef")
 autoplay = &"flicker"
 
@@ -230,3 +236,26 @@ position = Vector2(-57.63827, 89.19495)
 scale = Vector2(0.18218498, 0.281758)
 occluder = SubResource("OccluderPolygon2D_lnu2h")
 occluder_light_mask = 4
+
+[node name="darkner(give your heart shaped object)" type="CanvasModulate" parent="lighting" unique_id=709462392]
+light_mask = 15
+z_index = 10
+position = Vector2(127, 59.999992)
+scale = Vector2(200, 200)
+color = Color(0.45775366, 0.37996432, 0.99997455, 1)
+
+[node name="roomSides" type="Node" parent="lighting" unique_id=991912179]
+
+[node name="LeftRoomBoarder" type="StaticBody2D" parent="lighting/roomSides" unique_id=1001930790]
+position = Vector2(-1, 75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lighting/roomSides/LeftRoomBoarder" unique_id=421828394]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_yqjtg")
+
+[node name="RightRoomBoarder" type="StaticBody2D" parent="lighting/roomSides" unique_id=132336855]
+position = Vector2(250, 66)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lighting/roomSides/RightRoomBoarder" unique_id=607235021]
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_yqjtg")
