@@ -11,8 +11,8 @@ func enter() -> void:
 
 func update(_delta: float) -> PlayerState:
 	if(player.direction && !player.test_move(player.get_global_transform(), Vector2(player.direction, 0.0))): #if the player is trying to move and its not just the kind where you are trying to go up agienst a wall, we should walk
-		#if(Input.is_action_pressed("run", false)): //when we make running
-			#return player.RunState
+		if(Input.is_action_pressed("run", false)):
+			return $"../RunState"
 		return $"../WalkState"
 
 	#if crouch ect.

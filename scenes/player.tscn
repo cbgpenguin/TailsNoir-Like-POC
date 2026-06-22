@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dmw1rnol0h3ey" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://do76vkrtglmsq" path="res://resorces/player/player.tres" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://ce0p4gjdodxux" path="res://scripts/WalkState.gd" id="4_qlg0r"]
+[ext_resource type="Script" uid="uid://tcqiiqnklafa" path="res://RunState.gd" id="6_tuyoq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("1_3vyb7")
@@ -69,6 +70,14 @@ region = Rect2(265, 9, 73, 181)
 [sub_resource type="AtlasTexture" id="AtlasTexture_u1c27"]
 atlas = ExtResource("1_3vyb7")
 region = Rect2(144, 9, 73, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(121, 0, 121, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(242, 0, 121, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("3_qhqgy")
@@ -149,10 +158,16 @@ animations = [{
 "name": &"notWalking (short after they stop walking just standing looking in one direction before turning to center or walking again)",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}],
 "loop": 1,
 "name": &"running (ohh whats the pretty cat boi running from??)",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [],
 "loop": 1,
@@ -177,7 +192,7 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1109248123]
 position = Vector2(0, -90)
 sprite_frames = SubResource("SpriteFrames_nvl01")
-animation = &"default (front face short idel)"
+animation = &"running (ohh whats the pretty cat boi running from??)"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=895165102]
 position = Vector2(-1.0657352, -82)
@@ -189,3 +204,7 @@ script = ExtResource("4_qlg0r")
 [node name="IdleState" type="Node" parent="." unique_id=1184333670]
 script = ExtResource("1_dqkch")
 metadata/_custom_type_script = "uid://riuk2m85utuq"
+
+[node name="RunState" type="Node" parent="." unique_id=234501848]
+script = ExtResource("6_tuyoq")
+metadata/_custom_type_script = "uid://tcqiiqnklafa"

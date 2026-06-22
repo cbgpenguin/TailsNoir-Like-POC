@@ -1,7 +1,7 @@
 class_name WalkState
 extends PlayerState
 
-const SPEED = 60 # Pixles/s
+var SPEED = 60 # Pixles/s
 
 func enter() -> void:
 	player.animatedSprite2d.play("walking (self explanatory but I felt like giving a description)")
@@ -23,8 +23,8 @@ func update(_delta: float) -> PlayerState:
 	if(!player.velocity.x or player.move_and_slide() == true): #if it is still or it collided become idle
 		return $"../IdleState"
 	
-	#if(Input.is_action_pressed("run", false)):
-		#return player.run
+	if(Input.is_action_pressed("run", false)):
+		return $"../RunState"
 
 	#if crouch ect.
 		
