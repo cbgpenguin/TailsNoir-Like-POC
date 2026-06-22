@@ -1,3 +1,8 @@
 [gd_resource type="CanvasTexture" format=3 uid="uid://do76vkrtglmsq"]
 
+[ext_resource type="Texture2D" uid="uid://bvh84m6c42ocd" path="res://resorces/player/detective-walk-animation-place-holder.png" id="1_3dquw"]
+[ext_resource type="Texture2D" uid="uid://dned4npdmxhxi" path="res://resorces/player/detective-walk-animation-place-holder-normal.png" id="2_urxio"]
+
 [resource]
+diffuse_texture = ExtResource("1_3dquw")
+normal_texture = ExtResource("2_urxio")

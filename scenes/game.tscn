@@ -124,7 +124,7 @@ light_mask = 1023
 position = Vector2(-2.5, -72.5)
 limit_left = 0
 limit_top = 0
-limit_right = 250
+limit_right = 255
 limit_bottom = 125
 limit_smoothed = true
 
@@ -244,18 +244,18 @@ position = Vector2(127, 59.999992)
 scale = Vector2(200, 200)
 color = Color(0.45775366, 0.37996432, 0.99997455, 1)
 
-[node name="roomSides" type="Node" parent="lighting" unique_id=991912179]
+[node name="roomSides" type="Node" parent="." unique_id=991912179]
 
-[node name="LeftRoomBoarder" type="StaticBody2D" parent="lighting/roomSides" unique_id=1001930790]
-position = Vector2(-1, 75)
+[node name="LeftRoomBoarder" type="StaticBody2D" parent="roomSides" unique_id=1001930790]
+position = Vector2(0, 75)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="lighting/roomSides/LeftRoomBoarder" unique_id=421828394]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roomSides/LeftRoomBoarder" unique_id=421828394]
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_yqjtg")
 
-[node name="RightRoomBoarder" type="StaticBody2D" parent="lighting/roomSides" unique_id=132336855]
+[node name="RightRoomBoarder" type="StaticBody2D" parent="roomSides" unique_id=132336855]
 position = Vector2(250, 66)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="lighting/roomSides/RightRoomBoarder" unique_id=607235021]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roomSides/RightRoomBoarder" unique_id=607235021]
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_yqjtg")

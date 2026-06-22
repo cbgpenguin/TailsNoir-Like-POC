@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c4cnme6gsghcj" path="res://resorces/player/pixilart-sprite.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dmw1rnol0h3ey" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://bvh84m6c42ocd" path="res://resorces/player/detective-walk-animation-place-holder.png" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://do76vkrtglmsq" path="res://resorces/player/player.tres" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("1_3vyb7")
@@ -70,7 +70,7 @@ region = Rect2(144, 9, 73, 181)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("3_qhqgy")
-region = Rect2(15, 5, 101, 193)
+region = Rect2(121, 0, 121, 200)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nvl01"]
 animations = [{
@@ -175,7 +175,7 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1109248123]
 position = Vector2(0, -90)
 sprite_frames = SubResource("SpriteFrames_nvl01")
-animation = &"default (front face short idel)"
+animation = &"walking (self explanatory but I felt like giving a description)"
 autoplay = "default (front face short idel)"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=895165102]
