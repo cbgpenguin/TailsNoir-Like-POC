@@ -124,7 +124,7 @@ light_mask = 1023
 position = Vector2(-2.5, -72.5)
 limit_left = 0
 limit_top = 0
-limit_right = 255
+limit_right = 250
 limit_bottom = 125
 limit_smoothed = true
 

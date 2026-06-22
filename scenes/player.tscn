@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://mh6ihk61d2ke"]
 
 [ext_resource type="Texture2D" uid="uid://c4cnme6gsghcj" path="res://resorces/player/pixilart-sprite.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://riuk2m85utuq" path="res://scripts/IdleState.gd" id="1_dqkch"]
 [ext_resource type="Script" uid="uid://dmw1rnol0h3ey" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://do76vkrtglmsq" path="res://resorces/player/player.tres" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://ce0p4gjdodxux" path="res://scripts/WalkState.gd" id="4_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("1_3vyb7")
@@ -167,7 +169,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
-size = Vector2(30.9369, 164)
+size = Vector2(32.13147, 164)
 
 [node name="player" type="CharacterBody2D" unique_id=656778802]
 script = ExtResource("1_g2els")
@@ -175,9 +177,15 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1109248123]
 position = Vector2(0, -90)
 sprite_frames = SubResource("SpriteFrames_nvl01")
-animation = &"walking (self explanatory but I felt like giving a description)"
-autoplay = "default (front face short idel)"
+animation = &"default (front face short idel)"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=895165102]
-position = Vector2(-1.66302, -82)
+position = Vector2(-1.0657352, -82)
 shape = SubResource("RectangleShape2D_qhqgy")
+
+[node name="WalkState" type="Node" parent="." unique_id=765141924]
+script = ExtResource("4_qlg0r")
+
+[node name="IdleState" type="Node" parent="." unique_id=1184333670]
+script = ExtResource("1_dqkch")
+metadata/_custom_type_script = "uid://riuk2m85utuq"
