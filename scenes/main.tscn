@@ -1,20 +1,21 @@
 [gd_scene format=3 uid="uid://bstvixik1v3xq"]
 
-[ext_resource type="PackedScene" uid="uid://c0d7pfmw3tvdt" path="res://scenes/game.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://dolfmu0v25x6g" path="res://scenes/game.tscn" id="1_o5qli"]
 
 [node name="Main" type="Node2D" unique_id=1930363106]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=739137194]
-offset_right = 1153.0
-offset_bottom = 650.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 478.0
+offset_bottom = 479.0
+scale = Vector2(4, 4)
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1384519316]
 disable_3d = true
 handle_input_locally = false
 scaling_3d_mode = 5
-size = Vector2i(1153, 650)
-size_2d_override = Vector2i(200, 113)
-size_2d_override_stretch = true
+size = Vector2i(480, 270)
 render_target_update_mode = 4
 
 [node name="game" parent="SubViewportContainer/SubViewport" unique_id=65961930 instance=ExtResource("1_o5qli")]
