@@ -1,8 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://dolfmu0v25x6g"]
+[gd_scene format=3 uid="uid://dolfmu0v25x6g"]
 
+[ext_resource type="Texture2D" uid="uid://41skwedgam7k" path="res://resorces/backrounds/no-shadows-250x125_2.png" id="1_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://gc66732gdlvv" path="res://resorces/sounds/lightBulbBuzz.mp3" id="1_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://mh6ihk61d2ke" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="Texture2D" uid="uid://infd5ky7cjbg" path="res://resorces/backrounds/backdrop1.png" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://dvyl75ttvmg2t" path="res://resorces/backrounds/windowBackgroungBuildingsNightClose.png" id="2_iywne"]
+[ext_resource type="Texture2D" uid="uid://cyum1i8edte3r" path="res://resorces/backrounds/windowBackgroungBuildingsNightFar.png" id="3_p57ef"]
+[ext_resource type="PackedScene" uid="uid://mh6ihk61d2ke" path="res://scenes/player.tscn" id="4_u5sy4"]
 
 [sub_resource type="Gradient" id="Gradient_yqjtg"]
 offsets = PackedFloat32Array(0.0305085, 0.288136, 0.708475)
@@ -10,16 +12,11 @@ colors = PackedColorArray(1, 1, 1, 1, 0.383838, 0.383838, 0.383838, 1, 0, 0, 0, 
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_lnu2h"]
 gradient = SubResource("Gradient_yqjtg")
-width = 1280
-height = 1280
+width = 300
+height = 300
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lbhrr"]
-polygon = PackedVector2Array(-30.235, 36.9912, 27.6962, 36.9912, 27.0038, 66.7703, 23.7725, 67.0029, 23.5417, 45.5992, -14.7713, 46.0645, -15.2329, 65.8397, -28.8502, 65.8397)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_iywne"]
-polygon = PackedVector2Array(-71.0868, -9.53861, -33.697, -9.53861, -34.6202, 65.8397, -70.856, 65.3744)
+metadata/_snap_count = 20
 
 [sub_resource type="Animation" id="Animation_iywne"]
 length = 0.001
@@ -46,30 +43,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.8]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("lightbulbNoise:volume_db")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("lightbulbNoise:pitch_scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
 }
 
 [sub_resource type="Animation" id="Animation_lbhrr"]
@@ -100,61 +73,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [1.8, 0.85, 0.85, 1.8, 1.8, 0.8, 0.8, 1.8]
 }
-tracks/2/type = "audio"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("lightbulbNoise")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"clips": [{
-"end_offset": 61.5389,
-"start_offset": 7.78,
-"stream": ExtResource("1_lnu2h")
-}, {
-"end_offset": 69.69,
-"start_offset": 0.0,
-"stream": ExtResource("1_lnu2h")
-}, {
-"end_offset": 23.7,
-"start_offset": 5.0,
-"stream": ExtResource("1_lnu2h")
-}, {
-"end_offset": 20.1787,
-"start_offset": 51.611,
-"stream": ExtResource("1_lnu2h")
-}, {
-"end_offset": 0.0,
-"start_offset": 20.5668,
-"stream": ExtResource("1_lnu2h")
-}],
-"times": PackedFloat32Array(0, 4.53333, 8.66667, 53.8, 55.8333)
-}
-tracks/2/use_blend = true
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("lightbulbNoise:volume_db")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(8.46667, 8.63333, 15.3333, 15.7667, 53.4333, 53.7, 55.6667, 55.9333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [10.0, 0.0, 0.0, 10.0, 10.0, 0.0, 0.0, 10.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = false
-tracks/4/path = NodePath("lightbulbNoise:pitch_scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(8.43333, 8.63333, 15.1, 15.5333, 53.4333, 53.7, 55.6333, 55.8333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [1.0, 0.2, 0.5, 1.0, 1.0, 0.2, 0.2, 1.0]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p57ef"]
 _data = {
@@ -162,16 +80,26 @@ _data = {
 &"flicker": SubResource("Animation_lbhrr")
 }
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_iywne"]
+polygon = PackedVector2Array(-71.0868, -9.53861, -33.697, -9.53861, -34.6202, 65.8397, -70.856, 65.3744)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lbhrr"]
+polygon = PackedVector2Array(-30.235, 36.9912, 27.6962, 36.9912, 27.0038, 66.7703, 23.7725, 67.0029, 23.5417, 45.5992, -14.7713, 46.0645, -15.2329, 65.8397, -28.8502, 65.8397)
+
 [sub_resource type="Gradient" id="Gradient_lnu2h"]
 offsets = PackedFloat32Array(0.0474576, 0.138983, 0.722034)
 colors = PackedColorArray(1, 1, 1, 1, 0.809045, 0.809045, 0.809045, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_lbhrr"]
 gradient = SubResource("Gradient_lnu2h")
-width = 1280
-height = 1280
+width = 100
+height = 50
+use_hdr = true
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.12913907)
+metadata/_snap_enabled = true
+metadata/_snap_count = 16
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yqjtg"]
 polygon = PackedVector2Array(203, -361, 413, -361, 413, -339, 203, -340)
@@ -179,145 +107,155 @@ polygon = PackedVector2Array(203, -361, 413, -361, 413, -339, 203, -340)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lnu2h"]
 polygon = PackedVector2Array(207, -193, 411, -195, 412, -184, 204, -185)
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lnu2h"]
-
-[sub_resource type="Gradient" id="Gradient_lbhrr"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_iywne"]
-gradient = SubResource("Gradient_lbhrr")
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
 normal = Vector2(-0.00276242, -0.999996)
 
-[node name="game" type="Node2D"]
+[node name="game" type="Node2D" unique_id=65961930]
+texture_filter = 1
 
-[node name="lighting" type="Node" parent="."]
+[node name="player" parent="." unique_id=1498803642 instance=ExtResource("4_u5sy4")]
+light_mask = 2
+z_index = 3
+position = Vector2(84, 113)
+scale = Vector2(0.4, 0.4)
 
-[node name="hangingLight" type="PointLight2D" parent="lighting"]
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=2132124848]
+light_mask = 1023
+position = Vector2(-2.5, -72.5)
+limit_left = 0
+limit_top = 0
+limit_right = 250
+limit_bottom = 125
+limit_smoothed = true
+
+[node name="room" type="Node2D" parent="." unique_id=1292391985]
+
+[node name="Sprite2D" type="Sprite2D" parent="room" unique_id=1142506803]
+texture = ExtResource("1_lbhrr")
+centered = false
+
+[node name="windowNear" type="Parallax2D" parent="room" unique_id=282023571]
+light_mask = 8
+z_index = -1
+scroll_scale = Vector2(1.2, 1.2)
+scroll_offset = Vector2(165, 60)
+
+[node name="near" type="Sprite2D" parent="room/windowNear" unique_id=1551520551]
+light_mask = 8
+position = Vector2(-4, -2)
+scale = Vector2(0.2, 0.173)
+texture = ExtResource("2_iywne")
+
+[node name="windowFar" type="Parallax2D" parent="room" unique_id=795104635]
+light_mask = 8
+scroll_scale = Vector2(1.15, 1.15)
+
+[node name="far" type="Sprite2D" parent="room/windowFar" unique_id=1318207742]
+light_mask = 8
+z_index = -18
+position = Vector2(164.99998, 57.999996)
+scale = Vector2(0.23000017, 0.173)
+texture = ExtResource("3_p57ef")
+
+[node name="lighting" type="Node" parent="." unique_id=1172592220]
+
+[node name="hangingLight" type="PointLight2D" parent="lighting" unique_id=1293936567]
 top_level = true
-light_mask = 3
-position = Vector2(-135, -344)
-scale = Vector2(4.33273, 4.29832)
+position = Vector2(93.68798, 26.671654)
+scale = Vector2(1.2462498, 1.2220151)
 color = Color(1, 1, 0.439216, 1)
 energy = 1.8
 range_layer_min = -512
 shadow_enabled = true
 shadow_filter = 1
 shadow_filter_smooth = 1.6
-shadow_item_cull_mask = 6
 texture = SubResource("GradientTexture2D_lnu2h")
-texture_scale = 0.13
 
-[node name="desk" type="LightOccluder2D" parent="lighting/hangingLight"]
-occluder = SubResource("OccluderPolygon2D_lbhrr")
-occluder_light_mask = 4
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lighting/hangingLight" unique_id=1659878507]
+libraries/ = SubResource("AnimationLibrary_p57ef")
+autoplay = &"flicker"
 
-[node name="bookshelf" type="LightOccluder2D" parent="lighting/hangingLight"]
-occluder = SubResource("OccluderPolygon2D_iywne")
-occluder_light_mask = 4
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="lighting/hangingLight"]
-libraries = {
-&"": SubResource("AnimationLibrary_p57ef")
-}
-autoplay = "flicker"
-
-[node name="lightbulbNoise" type="AudioStreamPlayer2D" parent="lighting/hangingLight"]
+[node name="lightbulbNoise" type="AudioStreamPlayer2D" parent="lighting/hangingLight" unique_id=872295461]
+stream = ExtResource("1_lnu2h")
+volume_db = 5.986
 max_distance = 244.0
 attenuation = 0.812252
 panning_strength = 1.21
 bus = &"SoundEffects"
 
-[node name="tableBarLight" type="PointLight2D" parent="lighting"]
-position = Vector2(319, -332)
-scale = Vector2(5.48892, 3.54915)
+[node name="bookshelf" type="LightOccluder2D" parent="lighting/hangingLight" unique_id=1672610854]
+scale = Vector2(0.99999994, 1)
+occluder = SubResource("OccluderPolygon2D_iywne")
+
+[node name="desk" type="LightOccluder2D" parent="lighting/hangingLight" unique_id=952400345]
+position = Vector2(-0.5520401, 0.26869202)
+scale = Vector2(0.99999994, 1)
+occluder = SubResource("OccluderPolygon2D_lbhrr")
+
+[node name="forPlayer?" type="PointLight2D" parent="lighting" unique_id=1498243599]
+top_level = true
+light_mask = 2
+position = Vector2(93.68798, 26.671654)
+scale = Vector2(1.2462498, 1.2220151)
+color = Color(1, 1, 0.439216, 1)
+energy = 1.8
+range_layer_min = -512
+range_item_cull_mask = 0
+shadow_filter = 1
+shadow_filter_smooth = 1.6
+shadow_item_cull_mask = 0
+texture = SubResource("GradientTexture2D_lnu2h")
+texture_scale = 0.08
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lighting/forPlayer?" unique_id=276351844]
+libraries/ = SubResource("AnimationLibrary_p57ef")
+autoplay = &"flicker"
+
+[node name="tableBarLight" type="PointLight2D" parent="lighting" unique_id=279452481]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(223.00002, 34)
+scale = Vector2(1.5788121, 1.0090257)
 color = Color(1, 1, 0.423529, 1)
-energy = 1.6
 range_layer_min = -500
 range_layer_max = 5
-range_item_cull_mask = 3
 shadow_enabled = true
 shadow_filter = 1
 shadow_filter_smooth = 1.7
-shadow_item_cull_mask = 2
+shadow_item_cull_mask = 5
 texture = SubResource("GradientTexture2D_lbhrr")
-texture_scale = 0.1
 
-[node name="shelf" type="LightOccluder2D" parent="lighting/tableBarLight"]
-position = Vector2(-58.1171, 93.5435)
-scale = Vector2(0.182185, 0.281758)
+[node name="shelf" type="LightOccluder2D" parent="lighting/tableBarLight" unique_id=1340244730]
+position = Vector2(-58.27173, 89.194954)
+scale = Vector2(0.18218498, 0.281758)
 occluder = SubResource("OccluderPolygon2D_yqjtg")
-occluder_light_mask = 2
+occluder_light_mask = 4
 
-[node name="tableTop" type="LightOccluder2D" parent="lighting/tableBarLight"]
-position = Vector2(-58.1171, 93.5435)
-scale = Vector2(0.182185, 0.281758)
+[node name="tableTop" type="LightOccluder2D" parent="lighting/tableBarLight" unique_id=1930840611]
+position = Vector2(-57.63827, 89.19495)
+scale = Vector2(0.18218498, 0.281758)
 occluder = SubResource("OccluderPolygon2D_lnu2h")
-occluder_light_mask = 2
+occluder_light_mask = 4
 
-[node name="player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(0, -30)
-scale = Vector2(1.2, 1.2)
-up_direction = Vector2(0, 1)
+[node name="darkner(give your heart shaped object)" type="CanvasModulate" parent="lighting" unique_id=709462392]
+light_mask = 15
+z_index = 10
+position = Vector2(127, 59.999992)
+scale = Vector2(200, 200)
+color = Color(0.45775366, 0.37996432, 0.99997455, 1)
 
-[node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(-4, -102)
-scale = Vector2(6.3989, -34.9496)
-zoom = Vector2(1.5, 1.5)
-limit_left = -462
-limit_right = 412
-limit_bottom = 0
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
+[node name="roomSides" type="Node" parent="." unique_id=991912179]
 
-[node name="backrounds" type="ParallaxBackground" parent="."]
+[node name="LeftRoomBoarder" type="StaticBody2D" parent="roomSides" unique_id=1001930790]
+position = Vector2(0, 75)
 
-[node name="room" type="ParallaxLayer" parent="backrounds"]
-light_mask = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="backrounds/room"]
-light_mask = 3
-position = Vector2(-25, -219)
-scale = Vector2(1.16712, 1.16712)
-texture = ExtResource("2_yqjtg")
-
-[node name="windowCloseBuildings" type="ParallaxLayer" parent="backrounds"]
-z_index = -5
-motion_scale = Vector2(0.2, 0.2)
-motion_offset = Vector2(200, 200)
-
-[node name="Sprite2D" type="Sprite2D" parent="backrounds/windowCloseBuildings"]
-position = Vector2(166, -210)
-scale = Vector2(1.16712, 1.16712)
-texture = SubResource("NoiseTexture2D_lnu2h")
-
-[node name="windowFarBuildings" type="ParallaxLayer" parent="backrounds"]
-z_index = -5
-motion_scale = Vector2(0.1, 0.1)
-motion_offset = Vector2(300, 300)
-
-[node name="Sprite2D" type="Sprite2D" parent="backrounds/windowFarBuildings"]
-position = Vector2(46, -216)
-scale = Vector2(4.93882, 5.66146)
-texture = SubResource("GradientTexture2D_iywne")
-
-[node name="darkner(give your heart shaped object)" type="CanvasModulate" parent="backrounds"]
-position = Vector2(-10, -287)
-scale = Vector2(5.70312, 6.52344)
-color = Color(0.649893, 0.650042, 1, 1)
-
-[node name="roomSides" type="Node" parent="."]
-
-[node name="LeftRoomBoarder" type="StaticBody2D" parent="roomSides"]
-position = Vector2(-442, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="roomSides/LeftRoomBoarder"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roomSides/LeftRoomBoarder" unique_id=421828394]
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_yqjtg")
 
-[node name="RightRoomBoarder" type="StaticBody2D" parent="roomSides"]
-position = Vector2(375, 0)
+[node name="RightRoomBoarder" type="StaticBody2D" parent="roomSides" unique_id=132336855]
+position = Vector2(250, 66)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="roomSides/RightRoomBoarder"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roomSides/RightRoomBoarder" unique_id=607235021]
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_yqjtg")
