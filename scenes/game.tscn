@@ -178,10 +178,12 @@ autoplay = &"flicker"
 [node name="lightbulbNoise" type="AudioStreamPlayer2D" parent="lighting/hangingLight" unique_id=872295461]
 stream = ExtResource("1_lnu2h")
 volume_db = 5.986
+autoplay = true
 max_distance = 244.0
 attenuation = 0.812252
-panning_strength = 1.21
+panning_strength = 1.31
 bus = &"SoundEffects"
+parameters/looping = true
 
 [node name="bookshelf" type="LightOccluder2D" parent="lighting/hangingLight" unique_id=1672610854]
 scale = Vector2(0.99999994, 1)

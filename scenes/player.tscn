@@ -3,9 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://c4cnme6gsghcj" path="res://resorces/player/pixilart-sprite.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://riuk2m85utuq" path="res://scripts/IdleState.gd" id="1_dqkch"]
 [ext_resource type="Script" uid="uid://dmw1rnol0h3ey" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://do76vkrtglmsq" path="res://resorces/player/player.tres" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://bvh84m6c42ocd" path="res://resorces/player/detective-walk-animation-place-holder.png" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://do76vkrtglmsq" path="res://resorces/player/player.tres" id="4_fjrip"]
 [ext_resource type="Script" uid="uid://ce0p4gjdodxux" path="res://scripts/WalkState.gd" id="4_qlg0r"]
-[ext_resource type="Script" uid="uid://tcqiiqnklafa" path="res://RunState.gd" id="6_tuyoq"]
+[ext_resource type="Script" uid="uid://tcqiiqnklafa" path="res://scripts/RunState.gd" id="6_tuyoq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("1_3vyb7")
@@ -71,16 +72,28 @@ region = Rect2(265, 9, 73, 181)
 atlas = ExtResource("1_3vyb7")
 region = Rect2(144, 9, 73, 181)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
-atlas = ExtResource("3_qhqgy")
-region = Rect2(121, 0, 121, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("3_qhqgy")
 region = Rect2(242, 0, 121, 200)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
 atlas = ExtResource("3_qhqgy")
+region = Rect2(363, 0, 121, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(484, 0, 121, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("4_fjrip")
+region = Rect2(121, 0, 121, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("4_fjrip")
+region = Rect2(242, 0, 121, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("4_fjrip")
 region = Rect2(121, 0, 121, 200)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nvl01"]
@@ -148,9 +161,18 @@ animations = [{
 "name": &"default (front face short idel)",
 "speed": 6.0
 }, {
-"frames": [],
-"loop": 1,
-"name": &"longIdel (just standing there. taps foot ext.)",
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}],
+"loop": 0,
+"name": &"foot taps (while idle  looks like regular idle but triggers occasionally after waiting and foot is impatient)",
 "speed": 5.0
 }, {
 "frames": [],
@@ -192,7 +214,7 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1109248123]
 position = Vector2(0, -90)
 sprite_frames = SubResource("SpriteFrames_nvl01")
-animation = &"running (ohh whats the pretty cat boi running from??)"
+animation = &"foot taps (while idle  looks like regular idle but triggers occasionally after waiting and foot is impatient)"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=895165102]
 position = Vector2(-1.0657352, -82)
@@ -205,6 +227,10 @@ script = ExtResource("4_qlg0r")
 script = ExtResource("1_dqkch")
 metadata/_custom_type_script = "uid://riuk2m85utuq"
 
+[node name="stretchTimer" type="Timer" parent="IdleState" unique_id=991079233]
+
 [node name="RunState" type="Node" parent="." unique_id=234501848]
 script = ExtResource("6_tuyoq")
 metadata/_custom_type_script = "uid://tcqiiqnklafa"
+
+[connection signal="timeout" from="IdleState/stretchTimer" to="IdleState" method="_on_stretch_timer_timeout"]
