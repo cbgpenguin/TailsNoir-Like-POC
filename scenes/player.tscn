@@ -233,4 +233,8 @@ metadata/_custom_type_script = "uid://riuk2m85utuq"
 script = ExtResource("6_tuyoq")
 metadata/_custom_type_script = "uid://tcqiiqnklafa"
 
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=2089120781]
+position = Vector2(-2, -138)
+current = true
+
 [connection signal="timeout" from="IdleState/stretchTimer" to="IdleState" method="_on_stretch_timer_timeout"]
